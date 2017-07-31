@@ -1,0 +1,21 @@
+{
+  "name": "persomal-admin-mysql",
+  "version": "0.0.1",
+  "description": "蒋亚林的个人网站-后台(mysql版)",
+  "main": "server.js",
+  "author": "yalin.jiang",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "async": "^2.5.0",
+    "body-parser": "^1.17.2",
+    "ejs": "^2.5.7",
+    "express": "^4.15.3",
+    "express-mysql-session": "^1.2.1",
+    "express-session": "^1.15.4",
+    "mysql": "^2.14.0",
+    "sequelize": "^4.4.2"
+  }
+}
