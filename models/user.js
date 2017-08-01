@@ -1,11 +1,26 @@
-var mongoose = require('./../lib/db');
-var Schema = mongoose.Schema;
+const Sequilize = require('sequelize');
+const db = require('./../lib/db');
 
-//文章模板
-var UserSchema = new Schema({
-    name : { type: String ,default: null },
-    pwd : { type: String ,default: '123456' },
-    is_deleted : { type : Number ,default: 1}
+// 用户模型
+let User = db.define('users', {
+    id: {
+        type: Sequilize.INTEGER,
+        autoIncrement: true, // 递增
+        primaryKey: true // 主键
+    },
+    name: {
+        type: Sequilize.STRING(50),
+        comment: '用户名' // 注释
+    },
+    password: {
+        type: Sequilize.STRING(50),
+        comment: '密码'
+    }
+}, {
+    timestamps: false, // 关闭自动添加timestamp的功能
+    freezeTableName: true // 如果为 true 则表的名称和 model 相同
 });
 
-module.exports = mongoose.model('user',UserSchema);
+User.sync({ force: false });
+
+module.exports = User;

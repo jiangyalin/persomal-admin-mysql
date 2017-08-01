@@ -2,20 +2,20 @@
 const config = {
     port: 8087,
     mysql: {
-        database: 'personalDB',
+        database: 'personal',
         username: 'root',
         password: '123456',
         host: 'localhost',
         port: 3306
     },
     session: {
-        database: 'personalDB',
+        database: 'personal',
         username: 'root',
         password: '123456',
         host: 'localhost',
         port: 3306,
-        secret: 'personalDB',
-        key: 'personalDB',
+        secret: 'personal',
+        key: 'personal',
         maxAge: 2592000000
     }
 };

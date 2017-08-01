@@ -8,6 +8,10 @@
   "scripts": {
     "dev": "node server.js"
   },
+  "keywords": [
+    "es6",
+    "npm"
+  ],
   "dependencies": {
     "async": "^2.5.0",
     "body-parser": "^1.17.2",
@@ -15,7 +19,7 @@
     "express": "^4.15.3",
     "express-mysql-session": "^1.2.1",
     "express-session": "^1.15.4",
-    "mysql": "^2.14.0",
-    "sequelize": "^4.4.2"
+    "mysql": "^2.11.1",
+    "sequelize": "^3.24.1"
   }
 }
