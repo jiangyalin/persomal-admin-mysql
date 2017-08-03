@@ -17,10 +17,9 @@ let User = db.define('users', {
         comment: '密码'
     }
 }, {
-    timestamps: false, // 关闭自动添加timestamp的功能
     freezeTableName: true // 如果为 true 则表的名称和 model 相同
 });
 
-User.sync({ force: false });
+User.sync({ force: false }); // 如没有此表就创建一个
 
 module.exports = User;

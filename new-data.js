@@ -1,10 +1,17 @@
 const User = require('./models/user');
 
+// (async () => {
+//     await User.create({
+//         name: 'aaa',
+//         password: '21212'
+//     });
+// })();
+
 (async () => {
-    await User.create({
-        name: 'aaa',
-        password: '21212'
+    var user = await User.findAll({
+        attributes: ['name']
     });
+    console.log(user);
 })();
 
 // let user = User.build({

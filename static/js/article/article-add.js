@@ -35,7 +35,7 @@ $(function () {
         var content = quill.getContents();
         var title = $("#input-title").val();
         var description = $("#input-description").val();
-        var label = $("#input-label").select2('val');
+        var label = parseInt($("#input-label").select2('val'));
         if (id == ''){
             //添加
             AddArticle(title, description, content, label);
@@ -50,10 +50,6 @@ $(function () {
     //取消
     $(".j-btn-cancel").click(function () {
         window.history.go(-1);
-    });
-
-    $(".j-click").click(function () {
-        console.log($("#input-label").select2('val'))
     });
 
 });
@@ -85,11 +81,11 @@ function FindData(id,quill) {
             type: 'get',
             dataType: 'json',
             success: function(data){
-                if (data.label.length) {
-                    for (var i = 0; i<data.label.length; i++) {
-                        $("#input-label").find("option[value='"+data.label[i]._id+"']").attr("selected",true);
-                    }
-                }
+                // if (data.label.length) {
+                //     for (var i = 0; i<data.label.length; i++) {
+                //         $("#input-label").find("option[value='"+data.label[i].id+"']").attr("selected",true);
+                //     }
+                // }
                 //声明选择器
                 $("#input-label").select2({
                     language: "zh-CN"

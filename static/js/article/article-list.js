@@ -45,9 +45,10 @@ $(function () {
                 $(".j-tips").text('共查出'+data.total+'条数据');
                 //列表
                 $(".j-table-1").find("tbody").html('');
+                console.log(data)
                 for (var i = 0;i<data.rows.length;i++){
-                    $(".j-table-1").find("tbody").append('<tr data-id="'+data.rows[i]._id+'">' +
-                        '<td>'+data.rows[i]._id+'</td>' +
+                    $(".j-table-1").find("tbody").append('<tr data-id="'+data.rows[i].id+'">' +
+                        '<td>'+data.rows[i].id+'</td>' +
                         '<td>'+data.rows[i].title+'</td>' +
                         '<td>'+data.rows[i].description+'</td>' +
                         '<td>'+moment(data.rows[i].date).format('YYYY-MM-DD HH:mm:ss')+'</td>' +

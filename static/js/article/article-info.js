@@ -91,6 +91,7 @@ function FindPreviousArticle(dom,id) {
 
 //加载数据
 function FindArticle(dom,id) {
+    console.log("ppp")
     $.ajax({
         url : server.http+'/article/article-info/findArticleLabel',
         data : {'id': id},

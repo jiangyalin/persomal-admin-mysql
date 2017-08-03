@@ -19,6 +19,9 @@ router.post('/signIn',function (req, res) {
             }
         });
         let url = JSON.stringify(req.session.UrlReferrer);
+        console.log('user',user)
+        console.log('user[0]',user[0])
+        console.log('user[0].password',user[0].password)
         if (user[0]) {
             if (user[0].password == pwd) {
                 req.session.user = user[0];
