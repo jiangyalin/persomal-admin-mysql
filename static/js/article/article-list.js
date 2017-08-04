@@ -40,12 +40,11 @@ $(function () {
     $(".j-page").pagination({
         pageSize: 5,
         remote: {
-            url: server.http+'/article/findArticlesList',
+            url: '/article/findArticlesList',
             success: function (data) {
                 $(".j-tips").text('共查出'+data.total+'条数据');
                 //列表
                 $(".j-table-1").find("tbody").html('');
-                console.log(data)
                 for (var i = 0;i<data.rows.length;i++){
                     $(".j-table-1").find("tbody").append('<tr data-id="'+data.rows[i].id+'">' +
                         '<td>'+data.rows[i].id+'</td>' +
@@ -74,14 +73,14 @@ function GetDemo(title) {
     $(".j-page").pagination({
         pageSize: 5,
         remote: {
-            url: server.http+'/article/findArticlesList',
+            url: '/article/findArticlesList',
             params: {"title": title},
             success: function (data) {
                 //列表
                 $(".j-table-1").find("tbody").html('');
                 for (var i = 0;i<data.rows.length;i++){
-                    $(".j-table-1").find("tbody").append('<tr data-id="'+data.rows[i]._id+'">' +
-                        '<td>'+data.rows[i]._id+'</td>' +
+                    $(".j-table-1").find("tbody").append('<tr data-id="'+data.rows[i].id+'">' +
+                        '<td>'+data.rows[i].id+'</td>' +
                         '<td>'+data.rows[i].title+'</td>' +
                         '<td>'+data.rows[i].description+'</td>' +
                         '<td>'+moment(data.rows[i].date).format('YYYY-MM-DD HH:mm:ss')+'</td>' +
@@ -103,11 +102,12 @@ function GetDemo(title) {
 //删除数据
 function RemoveArticle(id) {
     $.ajax({
-        url: server.http+'/article/removeArticle',
+        url: '/article/removeArticle',
         data: {'id': id},
         type: 'get',
         dataType: 'json',
         success: function (data) {
+            console.log(data);
             if (JSON.parse(data) == "success"){
                 $.alert({
                     title: '已删除',
