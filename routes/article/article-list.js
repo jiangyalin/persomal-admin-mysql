@@ -11,7 +11,9 @@ router.get('/',function (req, res) {
 //文档数据(分页)
 router.get('/findArticlesList', function (req, res) {
     const data = {
-        title: req.query.title
+        title: req.query.title,
+        pageIndex: req.query.pageIndex,
+        pageSize: req.query.pageSize
     };
     MyRequest.get(ApiServer.mysqlServer, '/article/findArticlesList', data, function (value) {
         value = JSON.parse(value);

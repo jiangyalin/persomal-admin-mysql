@@ -1,5 +1,5 @@
 const mysqlServer = {
-    hostname: '192.168.0.104',
+    hostname: '192.168.0.112',
     port: 8082
 };
 
